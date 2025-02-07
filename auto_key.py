@@ -58,12 +58,12 @@ while True:
                                         GPIO.output(gpio_red, 1)
                                         # 解錠API叩く
                                         unlock_url = "https://script.google.com/macros/s/XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-					                              # アンロック時に端末名を足す
+					# アンロック時に端末名を足す
                                         unlock_url = unlock_url + key
                                         requests.get(unlock_url)
                                         print("解錠実行")
                                         # 解錠表示灯点灯
-				                              	# 解錠表示灯はRaspberry Pi Picoで別途作っておく
+				        # 解錠表示灯はRaspberry Pi Picoで別途作っておく
                                         requests.get("http://192.168.1.XX/?led=on")
                                         # 解錠後600秒待機
                                         time.sleep(600)
